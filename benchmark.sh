@@ -81,12 +81,6 @@ startup_time=$((end_time - start_time))
 source_count=$(grep -c "source:" ${CATALINA_HOME}/logs/catalina.out)
 objects_count=$(grep -c "objects" ${CATALINA_HOME}/logs/catalina.out)
 
-# === Source-level Duplication Report ===
-echo "--------------------------------------------"
-echo "🔄 Source-level Class Load Duplicates (if any)"
-awk '/class,load/ { src[$NF]++; } END { for (s in src) if (src[s]>1) printf "%-80s | %3d loads\n", s, src[s]; }' ${CATALINA_HOME}/logs/catalina.out | sort -k3 -nr | head -20
-echo "--------------------------------------------"
-
 # === Final Report ===
 echo "--------------------------------------------"
 echo "📊 Benchmark Summary for mode: $MODE"
