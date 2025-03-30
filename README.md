@@ -18,9 +18,14 @@ Both `app1` and `app2` are:
 - Simple Spring Boot REST applications exposing a test API.
 - Using basic dependencies: `spring-boot-starter-web` and `jdbc`.
 
-The **only difference** between `provided` and `included` is:
-- In `provided/`: Dependencies like Spring are marked as `<scope>provided</scope>` (externalized).
+The **only difference** between `provided` and `included` is
+
 - In `included/`: They are packaged into the WAR file (fat WAR).
+- In `provided/`: Dependencies like Spring are marked as `<scope>provided</scope>` (externalized).
+
+
+In the provided mode, copy the dependencies to tomcat's lib folder
+mvn dependency:copy-dependencies -DincludeScope=provided -DoutputDirectory=lib
 
 ---
 
