@@ -26,7 +26,6 @@ The **only difference** between `provided` and `included` is:
 
 ## `benchmark.sh` 
 
-The `benchmark.sh` automates:
 1. Cleaning and deploying the apps into Tomcat.
 2. (Re)Starting Tomcat.
 3. Measuring:
