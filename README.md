@@ -25,15 +25,17 @@ The **only difference** between `provided` and `included` is
 
 
 In the provided mode, copy the dependencies to tomcat's lib folder
+```
 mvn dependency:copy-dependencies -DincludeScope=provided -DoutputDirectory=lib
+```
 
 ---
 
 ## `benchmark.sh` 
 
-1. Cleaning and deploying the apps into Tomcat.
-2. (Re)Starting Tomcat.
-3. Measuring:
+1. Cleaning and deploying the apps into Tomcat
+2. (Re)Starting Tomcat
+3. Measuring
    - JVM startup time.
    - Number of classloading events.
    - Number of distinct classes.
@@ -49,14 +51,14 @@ sh benchmark.sh provided   # Tests thin WAR setup
 Sample Output
 ```
 --------------------------------------------
-📊 Benchmark Summary for mode: included
+Benchmark Summary for mode: included
 Startup Time      : 8273 ms
 Total Class Loads : 10844
 Distinct Classes  : 1221
 --------------------------------------------
 
 --------------------------------------------
-📊 Benchmark Summary for mode: provided
+Benchmark Summary for mode: provided
 Startup Time      : 5200 ms
 Total Class Loads : 7198
 Distinct Classes  : 1221
