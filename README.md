@@ -1,6 +1,6 @@
 # Hadza Experiment — Thin vs Fat Packaging (Spring Boot Classloading Benchmark)
 
-## 📦 Overview
+## Overview
 
 This is a simple experiment to demonstrate the impact of **fat-WAR** vs **thin-WAR** packaging when deploying multiple Spring Boot applications into a shared Tomcat JVM.
 
@@ -43,7 +43,7 @@ sh benchmark.sh provided   # Tests thin WAR setup
 ```
 
 Sample Output
-
+```
 --------------------------------------------
 📊 Benchmark Summary for mode: included
 Startup Time      : 8273 ms
@@ -57,8 +57,8 @@ Startup Time      : 5200 ms
 Total Class Loads : 7198
 Distinct Classes  : 1221
 --------------------------------------------
+```
 
-
-Notes:
+## Notes:
 
 This experiment is designed to highlight classloader efficiency and startup improvement, not direct heap/metaspace savings, which may require larger setups to become evident.
