@@ -11,8 +11,6 @@ export PATH=$PATH:${CATALINA_HOME}/bin
 export CATALINA_OPTS="-Xms256m -Xmx256m -verbose:class -XX:NativeMemoryTracking=summary"
 
 MODE=$1  # included | provided
-LOG_DIR="./benchmark_logs"
-mkdir -p ${LOG_DIR}
 
 if [[ "$MODE" != "included" && "$MODE" != "provided" ]]; then
   echo "Usage: $0 [included|provided]"
@@ -88,4 +86,4 @@ echo "Startup Time      : ${startup_time} ms"
 echo "Total Class Loads : ${source_count}"
 echo "Distinct Classes  : ${objects_count}"
 echo "--------------------------------------------"
-echo "📝 Logs saved in: ${LOG_DIR}/${MODE}_*.txt"
+
