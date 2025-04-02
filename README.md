@@ -23,6 +23,10 @@ The **only difference** between `provided` and `included` is
 - In `included/`: They are packaged into the WAR file (fat WAR).
 - In `provided/`: Dependencies like Spring are marked as `<scope>provided</scope>` (externalized).
 
+Package the applications
+```
+mvn clean package
+```
 
 In the provided mode, copy the dependencies to tomcat's lib folder
 ```
